@@ -3,9 +3,7 @@
     <title>Conversor de UPC a código de barras</title>
   </head>
   <body>
-    <script>
-      src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
     <h1>Conversor de UPC a código de barras</h1>
     <div id="barcode"></div>
     <form>
@@ -17,19 +15,20 @@
     // Asegurarse de que la biblioteca JsBarcode esté cargada antes de utilizarla
     window.addEventListener('load', () => {
       // Detectar cuando el usuario ha ingresado un número UPC y ha hecho clic en el botón "Enviar"
-    document.querySelector('form').addEventListener('submit', event => {
-      // Prevenir el envío del formulario
-      event.preventDefault();
+      document.querySelector('form').addEventListener('submit', event => {
+        // Prevenir el envío del formulario
+        event.preventDefault();
 
-      // Obtener el valor del número UPC ingresado
-      const upc = document.querySelector('#upc').value;
+        // Obtener el valor del número UPC ingresado
+        const upc = document.querySelector('#upc').value;
 
-      // Generar el código de barras correspondiente al número UPC ingresado
-      // (suponiendo que está utilizando la biblioteca JsBarcode)
-      JsBarcode('#barcode', upc);
+        // Generar el código de barras correspondiente al número UPC ingresado
+        // (suponiendo que está utilizando la biblioteca JsBarcode)
+        JsBarcode('#barcode', upc);
 
-      // Mostrar el código de barras generado
-      document.querySelector('#barcode').style.display = 'block';
+        // Mostrar el código de barras generado
+        document.querySelector('#barcode').style.display = 'block';
+      });
     });
   </script>
 </html>
