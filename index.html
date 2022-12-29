@@ -13,7 +13,9 @@
       <input type="submit" value="Enviar">
     </form> 
   <script>
-    // Detectar cuando el usuario ha ingresado un número UPC y ha hecho clic en el botón "Enviar"
+    // Asegurarse de que la biblioteca JsBarcode esté cargada antes de utilizarla
+    window.addEventListener('load', () => {
+      // Detectar cuando el usuario ha ingresado un número UPC y ha hecho clic en el botón "Enviar"
     document.querySelector('form').addEventListener('submit', event => {
       // Prevenir el envío del formulario
       event.preventDefault();
